@@ -10,10 +10,20 @@
     <div class="result__footer">
       <span>Поделиться</span>
       <div class="result__social">
-        <a target="_blank" href="http://vk.com/share.php?url=https://warriorcow.github.io/xmas/test.html">
+        <a
+          target="_blank"
+          :href="
+            `http://vk.com/share.php?url=https://warriorcow.github.io/xmas/${name}.html`
+          "
+        >
           <img src="../assets/vk.svg" alt="ВКонтакте" />
         </a>
-        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://warriorcow.github.io/xmas/index.html">
+        <a
+          target="_blank"
+          :href="
+            `https://www.facebook.com/sharer/sharer.php?u=https://warriorcow.github.io/xmas/${name}.html`
+          "
+        >
           <img src="../assets/fb.svg" alt="Facebook" />
         </a>
       </div>
@@ -28,20 +38,29 @@ export default {
   components: {
     Card
   },
-  props: ["src", "title", "desc"],
+  props: ["src", "title", "desc", "name"],
 
   metaInfo() {
-    return { 
+    return {
       title: this.title,
       meta: [
-          { vmid: 'description', name: 'description', content: this.desc},
-          { vmid: 'og:title', property: 'og:title', content: this.title},
-          { vmid: 'og:description', property: 'og:description', content: this.desc },
-          { property: 'og:site_name', content: 'Xmas'},
-          { property: 'og:type', content: 'website'},    
-          { name: 'robots', content: 'index,follow'} 
+        { vmid: "description", name: "description", content: this.desc },
+        { vmid: "og:title", property: "og:title", content: this.title },
+        {
+          vmid: "og:description",
+          property: "og:description",
+          content: this.desc
+        },
+        {
+          vmid: "og:image",
+          property: "og:image",
+          content: require(`../assets/cat.jpg`)
+        },
+        { property: "og:site_name", content: "Xmas" },
+        { property: "og:type", content: "website" },
+        { name: "robots", content: "index,follow" }
       ]
-    }
+    };
   }
 };
 </script>
@@ -49,7 +68,7 @@ export default {
 <style lang="scss">
 .result {
   &__image {
-    min-height: 373px;
+    max-height: 373px;
     margin: -20px -30px 10px -30px;
     @media screen and (max-width: 992px) {
       min-height: auto;
