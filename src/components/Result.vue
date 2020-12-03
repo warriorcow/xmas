@@ -10,7 +10,7 @@
     <div class="result__footer">
       <span>Поделиться</span>
       <div class="result__social">
-        <a target="_blank" href="http://vk.com/share.php?url=./test.html">
+        <a target="_blank" href="http://vk.com/share.php?url=https://warriorcow.github.io/xmas/test.html">
           <img src="../assets/vk.svg" alt="ВКонтакте" />
         </a>
         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://warriorcow.github.io/xmas/index.html">
