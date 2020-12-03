@@ -38,7 +38,7 @@ export default {
   components: {
     Card
   },
-  props: ["src", "title", "desc", "name"],
+  props: ["src", "title", "desc", "name"]
 };
 </script>
 

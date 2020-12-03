@@ -20,7 +20,7 @@ export default {
     Logo,
     Test,
     Background
-  },
+  }
 };
 </script>
 

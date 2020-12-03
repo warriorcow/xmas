@@ -31,7 +31,13 @@
           >
         </div>
         <QA :items="qa1" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-else-if="STEP_STATE === 3" :key="3">
@@ -45,7 +51,13 @@
           >
         </div>
         <QA :items="qa2" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 4" :key="4">
@@ -58,7 +70,13 @@
           >
         </div>
         <QA :items="qa3" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 5" :key="5">
@@ -71,7 +89,13 @@
           >
         </div>
         <QA :items="qa4" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 6" :key="6">
@@ -83,7 +107,13 @@
           >
         </div>
         <QA :items="qa5" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 7" :key="7">
@@ -94,7 +124,13 @@
           </strong>
         </div>
         <QA :items="qa6" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 8" :key="8">
@@ -107,7 +143,13 @@
           >
         </div>
         <QA :items="qa7" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 9" :key="9">
@@ -131,7 +173,13 @@
           >
         </div>
         <QA :items="qa9" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 10 && winnerBranch == 1" :key="10">
@@ -143,7 +191,13 @@
           >
         </div>
         <QA :items="qa10" @change="pickedAnswer" />
-        <button @click="nextStep" :class="{ disabled : !currentAnswer }" class="test__btn">Далее</button>
+        <button
+          @click="nextStep"
+          :class="{ disabled: !currentAnswer }"
+          class="test__btn"
+        >
+          Далее
+        </button>
       </Card>
 
       <div v-if="STEP_STATE === 11" :key="11" class="test__gift">
@@ -428,7 +482,7 @@ export default {
     },
 
     nextStepDouble() {
-      if ( this.currentAnswer ) {
+      if (this.currentAnswer) {
         this.CHANGE_ANSWERS(this.currentAnswer);
         this.CHANGE_ANSWERS(this.currentAnswer);
         this.CHANGE_STATE();
@@ -510,12 +564,12 @@ export default {
   }
   &__btn {
     margin-left: auto;
-    transition: .3s;
+    transition: 0.3s;
     opacity: 1;
     user-select: none;
     &.disabled {
       pointer-events: none;
-      opacity: .5;
+      opacity: 0.5;
     }
   }
   &__start {
