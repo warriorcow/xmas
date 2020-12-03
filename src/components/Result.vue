@@ -34,9 +34,10 @@ export default {
     return { 
       title: this.title,
       meta: [
-          { name: 'description', content: this.desc},
-          { property: 'og:title', content: this.title},
-          // { property: 'og:site_name', content: 'Epiloge'},
+          { vmid: 'description', name: 'description', content: this.desc},
+          { vmid: 'og:title', property: 'og:title', content: this.title},
+          { vmid: 'og:description', property: 'og:description', content: this.desc },
+          { property: 'og:site_name', content: 'Xmas'},
           { property: 'og:type', content: 'website'},    
           { name: 'robots', content: 'index,follow'} 
       ]
