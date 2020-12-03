@@ -5,12 +5,7 @@
 </template>
 
 <script>
-// import vueCustomScrollbar from "vue-custom-scrollbar";
-// import "vue-custom-scrollbar/dist/vueScrollbar.css";
 export default {
-  components: {
-    // vueCustomScrollbar
-  },
   data() {
     return {
       settings: {
@@ -44,13 +39,10 @@ export default {
   font-size: 19px;
   line-height: 22.8px;
   overflow: hidden;
-  // max-height: 85vh;
   position: relative;
   @media screen and (max-width: 992px) {
     font-size: 16px;
     line-height: 19px;
-    // padding: 15px 19px;
-    // max-height: 70vh;
     margin-top: 20px;
   }
 }

@@ -39,29 +39,6 @@ export default {
     Card
   },
   props: ["src", "title", "desc", "name"],
-
-  metaInfo() {
-    return {
-      title: this.title,
-      meta: [
-        { vmid: "description", name: "description", content: this.desc },
-        { vmid: "og:title", property: "og:title", content: this.title },
-        {
-          vmid: "og:description",
-          property: "og:description",
-          content: this.desc
-        },
-        {
-          vmid: "og:image",
-          property: "og:image",
-          content: require(`../assets/cat.jpg`)
-        },
-        { property: "og:site_name", content: "Xmas" },
-        { property: "og:type", content: "website" },
-        { name: "robots", content: "index,follow" }
-      ]
-    };
-  }
 };
 </script>
 

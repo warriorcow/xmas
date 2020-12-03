@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    step: 8,
+    step: 0,
     answers: {
       dreamer: 0, //Мечтатель
       wizard: 0, //Волшебник
