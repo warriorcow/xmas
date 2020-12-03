@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img :src="require(`../assets/${src}`)" alt="RosExpert" />
+    <img :src="require(`../../public/image/${src}`)" alt="RosExpert" />
   </div>
 </template>
 

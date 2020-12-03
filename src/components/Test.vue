@@ -201,7 +201,7 @@
       </Card>
 
       <div v-if="STEP_STATE === 11" :key="11" class="test__gift">
-        <img @click="setWinner" src="../assets/gift.svg" alt="" />
+        <img @click="setWinner" src="../../public/image/gift.svg" alt="" />
       </div>
 
       <Result

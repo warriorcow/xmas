@@ -1,7 +1,7 @@
 <template>
   <Card class="result">
     <div class="result__image">
-      <img :src="require(`../assets/${src}`)" alt="" />
+      <img :src="require(`../../public/image/${src}`)" :alt="title" />
     </div>
     <div class="result__inner">
       <div class="result__title">{{ title }}</div>
@@ -16,7 +16,7 @@
             `http://vk.com/share.php?url=https://warriorcow.github.io/xmas/${name}.html`
           "
         >
-          <img src="../assets/vk.svg" alt="ВКонтакте" />
+          <img src="../../public/image/vk.svg" alt="ВКонтакте" />
         </a>
         <a
           target="_blank"
@@ -24,7 +24,7 @@
             `https://www.facebook.com/sharer/sharer.php?u=https://warriorcow.github.io/xmas/${name}.html`
           "
         >
-          <img src="../assets/fb.svg" alt="Facebook" />
+          <img src="../../public/image/fb.svg" alt="Facebook" />
         </a>
       </div>
     </div>

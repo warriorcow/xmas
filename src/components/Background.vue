@@ -43,32 +43,32 @@ export default {};
   width: 28px;
   height: 65px;
   &#{$self}_1 {
-    background: url("../assets/garland_1.svg") no-repeat center / cover;
+    background: url("../../public/image/garland_1.svg") no-repeat center / cover;
     width: 28px;
     height: 66px;
     left: 318px;
   }
   &#{$self}_2 {
-    background: url("../assets/garland_2.svg") no-repeat center / cover;
+    background: url("../../public/image/garland_2.svg") no-repeat center / cover;
     width: 48px;
     height: 178px;
     left: 50px;
     left: 371px;
   }
   &#{$self}_3 {
-    background: url("../assets/garland_3.svg") no-repeat center / cover;
+    background: url("../../public/image/garland_3.svg") no-repeat center / cover;
     width: 48px;
     height: 111px;
     left: 466px;
   }
   &#{$self}_4 {
-    background: url("../assets/garland_4.svg") no-repeat center / cover;
+    background: url("../../public/image/garland_4.svg") no-repeat center / cover;
     width: 48px;
     height: 111px;
     right: 306px;
   }
   &#{$self}_5 {
-    background: url("../assets/garland_5.svg") no-repeat center / cover;
+    background: url("../../public/image/garland_5.svg") no-repeat center / cover;
     width: 48px;
     height: 177px;
     right: 201px;
@@ -77,7 +77,7 @@ export default {};
 
 .snowflake {
   $self: &;
-  background: url("../assets/snowflake.svg") no-repeat center / cover;
+  background: url("../../public/image/snowflake.svg") no-repeat center / cover;
   width: 24px;
   height: 24px;
   position: fixed;
