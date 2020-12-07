@@ -13,7 +13,7 @@
         <a
           target="_blank"
           :href="
-            `http://vk.com/share.php?url=https://warriorcow.github.io/xmas/${name}.html`
+            `http://vk.com/share.php?url=http://ny-quiz.rosexpert.ru/${name}.html`
           "
         >
           <img src="../../public/image/vk.svg" alt="ВКонтакте" />
@@ -21,7 +21,7 @@
         <a
           target="_blank"
           :href="
-            `https://www.facebook.com/sharer/sharer.php?u=https://warriorcow.github.io/xmas/${name}.html`
+            `https://www.facebook.com/sharer/sharer.php?u=http://ny-quiz.rosexpert.ru/${name}.html`
           "
         >
           <img src="../../public/image/fb.svg" alt="Facebook" />
