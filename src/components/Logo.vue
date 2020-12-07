@@ -16,9 +16,16 @@ export default {
   img {
     width: 181px;
     height: 56px;
+    background: #fbfdff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-sizing: content-box;
+    position: absolute;
+
     @media screen and (max-width: 992px) {
       width: 145px;
       height: 45px;
+      position: relative;
     }
   }
 }

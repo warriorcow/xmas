@@ -62,7 +62,7 @@ export default {
     margin-bottom: 15px;
   }
   &__desc {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 23px;
   }
   &__footer {

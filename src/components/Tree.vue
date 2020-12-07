@@ -1253,7 +1253,7 @@ export default {};
 .tree {
   $self: &;
   position: absolute;
-  transition: 0.2s;
+  transition: 0.6s;
   z-index: 1;
   cursor: pointer;
   height: 80%;
@@ -1261,7 +1261,11 @@ export default {};
     max-width: 320px;
     height: 60vh;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
+  }
+
+  @media screen and (max-width: 992px) and (orientation: landscape) {
+    height: 40vh;
   }
 
   svg {
@@ -1270,6 +1274,7 @@ export default {};
   }
 
   &#{$self}_1 {
+    transition: 2s;
     height: 100%;
     pointer-events: none;
     transform: translate(-21.5vw, 92vh) scale(3);

@@ -37,13 +37,16 @@ export default {
   align-self: center;
   margin-top: 40px;
   font-size: 19px;
-  line-height: 22.8px;
+  line-height: 1.3;
   overflow: hidden;
   position: relative;
   @media screen and (max-width: 992px) {
     font-size: 16px;
     line-height: 19px;
     margin-top: 20px;
+  }
+  p {
+    margin: 0 0 15px 0;
   }
 }
 </style>
