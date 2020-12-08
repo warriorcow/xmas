@@ -5,7 +5,7 @@
         name="answer"
         class="qa__input"
         :id="`answer${index}`"
-        @change="$emit('change', item.value)"
+        @change.prevent="$emit('change', item.value)"
         type="radio"
         :value="index"
         :data-value="item.value"

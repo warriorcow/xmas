@@ -39,6 +39,7 @@ export default {
   font-size: 19px;
   line-height: 1.3;
   overflow: hidden;
+  // height: 100%;
   position: relative;
   @media screen and (max-width: 992px) {
     font-size: 16px;
@@ -47,6 +48,7 @@ export default {
   }
   p {
     margin: 0 0 15px 0;
+    width: 100%;
   }
 }
 </style>

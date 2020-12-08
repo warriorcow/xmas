@@ -1256,12 +1256,14 @@ export default {};
   transition: 0.6s;
   z-index: 1;
   cursor: pointer;
-  height: 80%;
+  height: calc(100% - 210px);
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   @media screen and (max-width: 992px) {
     max-width: 320px;
-    height: 60vh;
     top: 50%;
-    transform: translateY(-60%);
+    transform: translate(-50%, -50%);
   }
 
   @media screen and (max-width: 992px) and (orientation: landscape) {
@@ -1279,7 +1281,9 @@ export default {};
     pointer-events: none;
     transform: translate(-21.5vw, 92vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(58.5vw, 61vh) scale(3);
+      transform: translate(197px, 1093px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_2 {
@@ -1287,7 +1291,9 @@ export default {};
     pointer-events: none;
     transform: translate(10vw, 83vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-61vw, 49vh) scale(3);
+      transform: translate(-213px, 853px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_3 {
@@ -1295,7 +1301,9 @@ export default {};
     pointer-events: none;
     transform: translate(-13vw, 79vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(67vw, 53vh) scale(3);
+      transform: translate(197px, 993px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_4 {
@@ -1303,7 +1311,9 @@ export default {};
     pointer-events: none;
     transform: translate(6vw, 58vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-94vw, 26vh) scale(3);
+      transform: translate(-353px, 773px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_5 {
@@ -1311,7 +1321,9 @@ export default {};
     pointer-events: none;
     transform: translate(-25vw, 56vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(35vw, 27vh) scale(3);
+      transform: translate(127px, 623px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_6 {
@@ -1319,7 +1331,9 @@ export default {};
     pointer-events: none;
     transform: translate(36vw, 50vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(66vw, 20vh) scale(3);
+      transform: translate(197px, 623px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_7 {
@@ -1327,7 +1341,9 @@ export default {};
     pointer-events: none;
     transform: translate(-30vw, 23vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-70vw, -4vh) scale(3);
+      transform: translate(-263px, 353px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_8 {
@@ -1335,7 +1351,9 @@ export default {};
     pointer-events: none;
     transform: translate(38vw, 23vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(84vw, -7vh) scale(3);
+      transform: translate(337px, 323px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_9 {
@@ -1343,7 +1361,9 @@ export default {};
     pointer-events: none;
     transform: translate(-44vw, -7vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-107vw, -18vh) scale(3);
+      transform: translate(-403px, 323px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_10 {
@@ -1351,16 +1371,18 @@ export default {};
     pointer-events: none;
     transform: translate(40vw, -7vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(90vw, -32vh) scale(3);
+      transform: translate(-403px, 223px) scale(3);
+      height: auto;
+      top: 0;
     }
   }
   &#{$self}_11 {
+    top: 0;
     opacity: 0;
-    display: none;
   }
   &#{$self}_12 {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 </style>
