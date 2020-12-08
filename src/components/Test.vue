@@ -6,6 +6,9 @@
         <p>Нажмите на ёлку, чтобы начать</p>
       </div>
       <Card v-if="STEP_STATE === 1" :key="1">
+        <strong class="title"
+          >Какой талант вы раскроете в себе в 2021 году?</strong
+        >
         <p>
           В конце 2020 года на связь с RosExpert вышли инопланетяне. Те самые,
           которые, как за сериалом, наблюдают за событиями, происходящими на
@@ -549,6 +552,11 @@ export default {
 </script>
 
 <style lang="scss">
+.title {
+  margin-bottom: 30px;
+  display: block;
+}
+
 .test {
   $self: &;
   display: flex;

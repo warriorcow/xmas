@@ -47,6 +47,7 @@ export default {
   }
   p {
     margin: 0 0 15px 0;
+    width: 100%;
   }
 }
 </style>
