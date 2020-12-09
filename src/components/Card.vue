@@ -40,6 +40,7 @@ export default {
   line-height: 1.3;
   overflow: hidden;
   position: relative;
+  height: 100%;
   @media screen and (max-width: 992px) {
     font-size: 16px;
     line-height: 19px;

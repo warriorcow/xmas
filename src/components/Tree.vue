@@ -1252,16 +1252,25 @@ export default {};
 <style lang="scss">
 .tree {
   $self: &;
-  position: absolute;
-  transition: 0.6s;
-  z-index: 1;
+  // width: 100%;
   cursor: pointer;
-  height: 80%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.6s;
+  transform-origin: top;
+  height: calc(100vh - 200px);
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 1;
   @media screen and (max-width: 992px) {
-    max-width: 320px;
-    height: 60vh;
+    width: 60%;
+    height: 60%;
+    position: absolute;
     top: 50%;
-    transform: translateY(-60%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @media screen and (max-width: 992px) and (orientation: landscape) {
@@ -1270,97 +1279,127 @@ export default {};
 
   svg {
     width: 100%;
-    height: 100%;
+    flex: 1;
   }
 
   &#{$self}_1 {
     transition: 2s;
     height: 100%;
     pointer-events: none;
-    transform: translate(-21.5vw, 92vh) scale(3);
+    transform: translate(-34vw, -57vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(58.5vw, 61vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-35%, 30%);
     }
   }
   &#{$self}_2 {
     height: 100%;
     pointer-events: none;
-    transform: translate(10vw, 83vh) scale(3);
+    transform: translate(4vw, -67vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-61vw, 49vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-75%, -2%) scale(1);
     }
   }
   &#{$self}_3 {
     height: 100%;
     pointer-events: none;
-    transform: translate(-13vw, 79vh) scale(3);
+    transform: translate(-30vw, -77vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(67vw, 53vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-19%, -9%) scale(1);
     }
   }
   &#{$self}_4 {
     height: 100%;
     pointer-events: none;
-    transform: translate(6vw, 58vh) scale(3);
+    transform: translate(-8vw, -97vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-94vw, 26vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-89%, -17%) scale(1);
     }
   }
   &#{$self}_5 {
     height: 100%;
     pointer-events: none;
-    transform: translate(-25vw, 56vh) scale(3);
+    transform: translate(-40vw, -107vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(35vw, 27vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-33%, -19%) scale(1);
     }
   }
   &#{$self}_6 {
     height: 100%;
     pointer-events: none;
-    transform: translate(36vw, 50vh) scale(3);
+    transform: translate(30vw, -115vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(66vw, 20vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-29%, -23%) scale(1);
     }
   }
   &#{$self}_7 {
     height: 100%;
     pointer-events: none;
-    transform: translate(-30vw, 23vh) scale(3);
+    transform: translate(-25vw, -145vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-70vw, -4vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-9%, -36%) scale(1);
     }
   }
   &#{$self}_8 {
     height: 100%;
     pointer-events: none;
-    transform: translate(38vw, 23vh) scale(3);
+    transform: translate(0vw, -155vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(84vw, -7vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-89%, -36%) scale(1);
     }
   }
   &#{$self}_9 {
     height: 100%;
     pointer-events: none;
-    transform: translate(-44vw, -7vh) scale(3);
+    transform: translate(-18vw, -175vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(-107vw, -18vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-39%, -50%) scale(1);
     }
   }
   &#{$self}_10 {
     height: 100%;
     pointer-events: none;
-    transform: translate(40vw, -7vh) scale(3);
+    transform: translate(12vw, -185vh) scale(3);
     @media screen and (max-width: 992px) {
-      transform: translate(90vw, -32vh) scale(3);
+      height: auto;
+      width: 200%;
+      height: 200%;
+      transform: translate(-31%, -50%) scale(1);
     }
   }
   &#{$self}_11 {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
   &#{$self}_12 {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 </style>

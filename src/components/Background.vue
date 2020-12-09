@@ -35,6 +35,7 @@ export default {};
   height: 100%;
   top: 69px;
   left: 0;
+  z-index: -1;
 }
 .garland {
   $self: &;
@@ -91,25 +92,25 @@ export default {};
     width: 24px;
     height: 24px;
     left: 72px;
-    animation-delay: 1s, 1s;
+    animation-delay: 1.2s, 1.2s;
   }
   &#{$self}_2 {
     width: 38px;
     height: 38px;
     left: 122px;
-    animation-delay: 5s, 5s;
+    animation-delay: 5.5s, 5.5s;
   }
   &#{$self}_3 {
     width: 39px;
     height: 39px;
     left: 171px;
-    animation-delay: 2s, 2s;
+    animation-delay: 2.5s, 2.5s;
   }
   &#{$self}_4 {
     width: 24px;
     height: 24px;
     left: 294px;
-    animation-delay: 5s, 5s;
+    animation-delay: 3.5s, 5.5s;
   }
   &#{$self}_5 {
     width: 38px;
@@ -121,19 +122,19 @@ export default {};
     width: 24px;
     height: 24px;
     left: 419px;
-    animation-delay: 7s, 7s;
+    animation-delay: 7.2s, 7.2s;
   }
   &#{$self}_7 {
     width: 36px;
     height: 36px;
     left: 478px;
-    animation-delay: 3s, 3s;
+    animation-delay: 3.1s, 3.1s;
   }
   &#{$self}_8 {
     width: 39px;
     height: 39px;
     right: 514px;
-    animation-delay: 8s, 8s;
+    animation-delay: 8.5s, 8.5s;
   }
   &#{$self}_9 {
     width: 23[x];
@@ -145,13 +146,13 @@ export default {};
     width: 28px;
     height: 28px;
     right: 379px;
-    animation-delay: 7.1s, 7.1s;
+    animation-delay: 3.1s, 3.1s;
   }
   &#{$self}_11 {
     width: 33px;
     height: 33px;
     right: 360px;
-    animation-delay: 3s, 3s;
+    animation-delay: 3.9s, 3.9s;
   }
   &#{$self}_12 {
     width: 23px;

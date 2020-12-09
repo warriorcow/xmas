@@ -13,9 +13,9 @@
         <a
           @click.prevent="
             popupCenter(`http://vk.com/share.php?url=${domen}/${name}.html`),
-            '',
-            1000,
-            300
+              '',
+              1000,
+              300
           "
         >
           <img src="../../public/image/vk.svg" alt="ВКонтакте" />
@@ -51,7 +51,6 @@ export default {
   },
   methods: {
     popupCenter(url, title, w, h) {
-      // Fixes dual-screen position                             Most browsers      Firefox
       const dualScreenLeft =
         window.screenLeft !== undefined ? window.screenLeft : window.screenX;
       const dualScreenTop =
@@ -130,6 +129,10 @@ export default {
   }
   &__social {
     display: flex;
+
+    a {
+      cursor: pointer;
+    }
   }
 }
 </style>

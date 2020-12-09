@@ -10,8 +10,6 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-100vh": "^0.1.1",
-    "vue-custom-scrollbar": "^1.4.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

@@ -1,6 +1,5 @@
 <template>
   <div class="test">
-    <Tree @click.native="nextStep" :class="classObject" />
     <transition name="fade" mode="out-in">
       <div v-if="STEP_STATE === 0" :key="0" class="test__start">
         <p>Нажмите на ёлку, чтобы начать</p>
@@ -270,7 +269,6 @@
 <script>
 import Card from "./Card";
 import QA from "./QA";
-import Tree from "./Tree";
 import Result from "./Result";
 import { mapGetters, mapActions } from "vuex";
 
@@ -460,7 +458,6 @@ export default {
   components: {
     Card,
     QA,
-    Tree,
     Result
   },
 
@@ -486,7 +483,7 @@ export default {
         this.CHANGE_STATE();
       }
 
-      window.scrollTo({
+      document.querySelector("#app").scrollTo({
         top: 0,
         behavior: "smooth"
       });
@@ -564,9 +561,7 @@ export default {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  flex: 1;
-  margin-top: -26px;
-  position: relative;
+  margin: auto 0;
   @media screen and (max-width: 992px) {
     margin-top: 0;
   }
@@ -590,17 +585,26 @@ export default {
   }
   &__start {
     margin-top: auto;
+    position: absolute;
+    bottom: 5vh;
     @media screen and (max-width: 992px) {
       margin-bottom: 0;
       font-size: 21px;
       line-height: 25px;
       font-weight: 300;
+      position: absolute;
+      bottom: 5vh;
+      padding: 0 20px;
     }
   }
   &__gift {
     display: flex;
     align-items: center;
     height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
 
     img {
       cursor: pointer;

@@ -76,10 +76,16 @@ export default {
   &__input {
     display: none;
 
-    &:checked ~ #{$self}__radio .bulb,
-    &:hover ~ #{$self}__radio .bulb {
+    &:checked ~ #{$self}__radio .bulb {
       fill: #e21a1a;
       stroke: #e21a1a;
+    }
+
+    &:hover ~ #{$self}__radio .bulb {
+      @media screen and (min-width: 992px) {
+        fill: #e21a1a;
+        stroke: #e21a1a;
+      }
     }
   }
 
