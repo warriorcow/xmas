@@ -42,7 +42,7 @@ export default {
     ...mapActions(["CHANGE_STATE"]),
 
     nextStep() {
-      this.CHANGE_STATE();
+      this.CHANGE_STATE("+");
     }
   }
 };

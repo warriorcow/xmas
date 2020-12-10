@@ -1,16 +1,19 @@
 <template>
   <Card class="result">
     <div class="result__image">
-      <img :src="require(`../../public/image/${src}`)" :alt="title" />
+      <img v-img :src="require(`../../public/image/${src}`)" :alt="title" />
     </div>
     <div class="result__inner">
       <div class="result__title">{{ title }}</div>
       <div class="result__desc">{{ desc }}</div>
     </div>
     <div class="result__footer">
-      <span>Поделиться</span>
+      <button @click="REPASS_TEST" class="result__refresh">
+        Пройти тест еще раз
+      </button>
       <div class="result__social">
         <a
+          class="vk"
           @click.prevent="
             popupCenter(`http://vk.com/share.php?url=${domen}/${name}.html`),
               '',
@@ -21,6 +24,7 @@
           <img src="../../public/image/vk.svg" alt="ВКонтакте" />
         </a>
         <a
+          class="fb"
           @click.prevent="
             popupCenter(
               `https://www.facebook.com/sharer/sharer.php?u=${domen}/${name}.html`,
@@ -39,17 +43,23 @@
 
 <script>
 import Card from "./Card";
+import { mapActions } from "vuex";
 export default {
   components: {
     Card
   },
+
   props: ["src", "title", "desc", "name"],
+
   data() {
     return {
-      domen: "http://ny-quiz.rosexpert.ru"
+      domen: "https://ny-quiz.rosexpert.ru"
     };
   },
+
   methods: {
+    ...mapActions(["REPASS_TEST"]),
+
     popupCenter(url, title, w, h) {
       const dualScreenLeft =
         window.screenLeft !== undefined ? window.screenLeft : window.screenX;
@@ -89,9 +99,20 @@ export default {
 .result {
   &__image {
     max-height: 373px;
-    margin: -20px -30px 10px -30px;
+    margin: -35px -45px 10px -45px;
+    position: relative;
     @media screen and (max-width: 992px) {
       min-height: auto;
+    }
+    &::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      background: url('../../public/image/magnifier.svg');
+      bottom: 20px;
+      right: 20px;
+      position: absolute;
+      pointer-events: none;
     }
     img {
       width: 100%;
@@ -127,11 +148,35 @@ export default {
       }
     }
   }
+
+  &__refresh {
+    font-size: 17px;
+    font-weight: 300;
+    text-align: left;
+    padding: 0;
+  }
+
   &__social {
     display: flex;
 
     a {
+      width: 37px;
+      height: 37px;
       cursor: pointer;
+      @media screen and (max-width: 992px) {
+        width: 30px;
+        height: 30px;
+      }
+      &.vk {
+        width: 48px;
+        @media screen and (max-width: 992px) {
+          width: 38px;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

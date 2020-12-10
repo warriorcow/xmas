@@ -14,6 +14,12 @@
           Земле. Не удивительно, что сюжет сезона 2020 года показался им самым
           захватывающим из всех, что прошли к настоящему времени.
         </p>
+        <div class="test__footer">
+          <button class="test__btn" @click.prevent="nextStep">Далее</button>
+        </div>
+      </Card>
+
+      <Card v-if="STEP_STATE === 2" :key="2">
         <p>
           Из-за разницы в межгалактическом времени инопланетные существа
           прекрасно знают, каким будет и будущий 2021. По вашему рассказу о том,
@@ -22,6 +28,15 @@
           увидят тот самый талант, который станет вашим двигателем и опорой на
           протяжении следующих 365 дней.
         </p>
+        <div class="test__footer">
+          <button class="test__btn test__btn_back" @click.prevent="prevStep">
+            <img src="../../public/image/arrow.svg" />
+          </button>
+          <button class="test__btn" @click.prevent="nextStep">Далее</button>
+        </div>
+      </Card>
+
+      <Card v-if="STEP_STATE === 3" :key="3">
         <p>
           Вместе с нашими инопланетными гостями мы зададим вам несколько
           вопросов. Будьте снисходительны к несовершенству их языка и незнанию
@@ -29,28 +44,34 @@
           можем о них рассказать.
         </p>
         <p>Готовы?</p>
-
-        <button class="test__btn" @click.prevent="nextStep">Далее</button>
+        <div class="test__footer">
+          <button class="test__btn test__btn_back" @click.prevent="prevStep">
+            <img src="../../public/image/arrow.svg" />
+          </button>
+          <button class="test__btn" @click.prevent="nextStep">Далее</button>
+        </div>
       </Card>
 
-      <Card v-else-if="STEP_STATE === 2" :key="2">
+      <Card v-else-if="STEP_STATE === 4" :key="4">
         <div>
           <strong
-            >Ну что же, вернемся к самому началу! Как вы встретили 2020
+            >Ну что же, вернемся к самому началу! <br />Как вы встретили 2020
             год?</strong
           >
         </div>
         <QA :items="qa1" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <Card v-else-if="STEP_STATE === 3" :key="3">
+      <Card v-else-if="STEP_STATE === 5" :key="5">
         <div>
           <strong
             >Переводчики нам подсказывают — это называется «Новогодние
@@ -61,16 +82,18 @@
           >
         </div>
         <QA :items="qa2" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <Card v-if="STEP_STATE === 4" :key="4">
+      <Card v-if="STEP_STATE === 6" :key="6">
         <div>
           <strong
             >Нам рассказали, что в этой части Земли февраль и март — особые
@@ -80,16 +103,18 @@
           >
         </div>
         <QA :items="qa3" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <Card v-if="STEP_STATE === 5" :key="5">
+      <Card v-if="STEP_STATE === 7" :key="7">
         <div>
           <strong
             >Мы заметили, что весной на вашей планете начало происходить что-то
@@ -99,70 +124,77 @@
           >
         </div>
         <QA :items="qa4" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
-      </Card>
-
-      <Card v-if="STEP_STATE === 6" :key="6">
-        <div>
-          <strong
-            >Так, эти светящиеся прямоугольники вам заменили почти все! Неужели
-            и еду тоже? Вы перестали питаться? Научились перерабатывать в пищу
-            световую энергию экранов?</strong
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
           >
+            Далее
+          </button>
         </div>
-        <QA :items="qa5" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
-      </Card>
-
-      <Card v-if="STEP_STATE === 7" :key="7">
-        <div>
-          <strong
-            >У нас множество вопросов. А что бы вы рекомендовали сделать, чтобы
-            лучше понять все про людей в вашем земном 2020 году?
-          </strong>
-        </div>
-        <QA :items="qa6" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
       </Card>
 
       <Card v-if="STEP_STATE === 8" :key="8">
         <div>
           <strong
-            >Да… мы уже заметили, жизнь землян, порой, интереснее любого
-            сериала! И расскажете вы об этом лучше всех сами, как у вас говорят,
-            «из первых рук». Определенно, стоит пригласить вас к нам в гости!
+            >Похоже, эти светящиеся прямоугольники вами заменили всё остальное.
+            И еду?! Неужели вы научились перерабатывать в пищу световую энергию
+            экранов?</strong
+          >
+        </div>
+        <QA :items="qa5" @change="pickedAnswer" />
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
+      </Card>
+
+      <Card v-if="STEP_STATE === 9" :key="9">
+        <div>
+          <strong
+            >У нас множество вопросов! Что нам поможет лучше понять все о вас,
+            людях, в земном 2020 году?
+          </strong>
+        </div>
+        <QA :items="qa6" @change="pickedAnswer" />
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
+      </Card>
+
+      <Card v-if="STEP_STATE === 10" :key="10">
+        <div>
+          <strong
+            >Даааа!.. Жизнь землян, порой интересней любого сериала! Определенно
+            стоит пригласить вас в гости, чтобы вы сами обо всем рассказали.
             Каким транспортом предпочтете воспользоваться?</strong
           >
         </div>
         <QA :items="qa7" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <Card v-if="STEP_STATE === 9" :key="9">
+      <Card v-if="STEP_STATE === 11" :key="11">
         <div>
           <strong
             >Любая мечта рано или поздно становится реальностью! У нас осталось
@@ -171,10 +203,12 @@
           >
         </div>
         <QA :items="qa8" @change="pickedAnswer" />
-        <button @click="nextStepDouble" class="test__btn">Далее</button>
+        <div class="test__footer">
+          <button @click="nextStepDouble" class="test__btn">Далее</button>
+        </div>
       </Card>
 
-      <Card v-if="STEP_STATE === 10 && winnerBranch == 0" :key="10">
+      <Card v-if="STEP_STATE === 12 && winnerBranch == 0" :key="12">
         <div>
           <strong
             >Пришло наше время прощаться. Может быть, вы оставите нам на память
@@ -183,16 +217,18 @@
           >
         </div>
         <QA :items="qa9" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <Card v-if="STEP_STATE === 10 && winnerBranch == 1" :key="10">
+      <Card v-if="STEP_STATE === 12 && winnerBranch == 1" :key="12">
         <div>
           <strong
             >Пришло наше время прощаться. Может быть, вы оставите нам на память
@@ -201,21 +237,23 @@
           >
         </div>
         <QA :items="qa10" @change="pickedAnswer" />
-        <button
-          @click="nextStep"
-          :class="{ disabled: !currentAnswer }"
-          class="test__btn"
-        >
-          Далее
-        </button>
+        <div class="test__footer">
+          <button
+            @click="nextStep"
+            :class="{ disabled: !currentAnswer }"
+            class="test__btn"
+          >
+            Далее
+          </button>
+        </div>
       </Card>
 
-      <div v-if="STEP_STATE === 11" :key="11" class="test__gift">
+      <div v-if="STEP_STATE === 13" :key="13" class="test__gift">
         <img @click="setWinner" src="../../public/image/gift.svg" alt="" />
       </div>
 
       <Result
-        v-if="STEP_STATE === 12 && winner == 'inventor'"
+        v-if="STEP_STATE === 14 && winner == 'inventor'"
         :key="13"
         name="inventor"
         src="inventor.gif"
@@ -223,7 +261,7 @@
         desc="2021 год откроет в вас талант Изобретателя. Кто знает, может быть именно в этом году мир, наконец, получит самозастегивающиеся пуговицы и автомат для нанесения макияжа! Ваше желание делать мир удобнее и лучше будет неукротимым, а если рядом с вами будет Мечтатель — серия патентов за уникальные разработки украсит стены вашего дома. Вам не понадобятся учебники или инструкции. Вы ко всему придете опытным путем. Сверхскоростные вакуумные поезда или ракета для космических полетов устарели еще в прошлом году — наверняка вы придумаете что-то поинтереснее. После такого несомненно захочется написать в социальных сетях: «Как тебе такое, Илон Маск?»."
       />
       <Result
-        v-if="STEP_STATE === 12 && winner == 'wizard'"
+        v-if="STEP_STATE === 14 && winner == 'wizard'"
         :key="13"
         name="wizard"
         src="wizard.gif"
@@ -231,7 +269,7 @@
         desc="В 2021 году вы станете…. Волшебником! Кажется, 2020 год был слишком серьезным, поэтому без нотки мистики и волшебства не обойтись. Возможно, вы найдете магический предмет, который будет обращать ошибки в победы, составите рецепт таинственного напитка всезнания или бессмертия или просто вспомните заклинание, которое сможет зажечь в сердце каждого любовь, а в глазах — радость жизни. Ваш ореол таинственности и загадочности будет привлекать людей. Поэтому и Юрий Дудь, добившись интервью с вами, в конце обязательно спросит: «В чем ваша суперсила?»."
       />
       <Result
-        v-if="STEP_STATE === 12 && winner == 'dreamer'"
+        v-if="STEP_STATE === 14 && winner == 'dreamer'"
         :key="13"
         name="dreamer"
         src="dreamer.gif"
@@ -239,7 +277,7 @@
         desc="В 2021 году вы станете настоящим Мечтателем. Неопределенность перестанет существовать — вместе с великими визионерами мира вы сможете увидеть, как изменятся города и страны, предскажете архитектурные стили поселений на Марсе и технологические открытия, которые оставят далеко позади все, что может спрогнозировать самый мощный искусственный интеллект сегодня. В конце концов, именно Мечтатели открывают дорогу Изобретателям и Исследователям!  Возможно, перевезти мебель и уютно обосноваться в увиденном мире будущего непосредственно в 2021 году еще не получится, но увидеть новые горизонты и пути — определенно, да!"
       />
       <Result
-        v-if="STEP_STATE === 12 && winner == 'traveler'"
+        v-if="STEP_STATE === 14 && winner == 'traveler'"
         :key="13"
         name="traveler"
         src="traveler.gif"
@@ -247,7 +285,7 @@
         desc="В 2021 году вы станете настоящим Путешественником! Возможно, именно так повлияли на вас мартовские и майские маршруты 2020 года — турне из гостиной в кабинет или ралли балкон – прихожая. Определенно, дороги и неизведанные географии манят вас! Открывать мир с помощью карт Google — не для вас. Путешествие может быть только реальным. Обойти Москву по кольцу парков?  Добраться до сердца плато Путорана? Сойти с проторенных туристических троп Алтая и найти подтверждение существованию древних племен? Купить билет на Занзибар и Танзанию? Вы будете смело ставить точки на карте и планировать маршрут. А если обстоятельства заставят сойти с пути — вы всегда открыты к новым поворотам."
       />
       <Result
-        v-if="STEP_STATE === 12 && winner == 'researcher'"
+        v-if="STEP_STATE === 14 && winner == 'researcher'"
         :key="13"
         name="researcher"
         src="researcher.gif"
@@ -255,7 +293,7 @@
         desc="В 2021 году вы откроете в себе Исследователя. Вероятно, вы и в 2020 году замечали, что есть у вас шесть незаменимых помощников — «шестерка слуг, проворных удалых»: Как, Почему, Кто, Что, Когда и Где. Вместе с этой командой в Новом году вы сумеете добраться до сути самых сложных задач и найти разгадки крупнейшим парадоксам человечества: например, казавшемуся неизменным закону Мёрфи. Возможно, именно 2021 год вы вспомните как время, когда вы начали работать над темой, которая привела вас к Нобелевской премии!"
       />
       <Result
-        v-if="STEP_STATE === 12 && winner == 'mastermind'"
+        v-if="STEP_STATE === 14 && winner == 'mastermind'"
         :key="13"
         name="mastermind"
         src="mastermind.gif"
@@ -298,17 +336,17 @@ export default {
       qa2: [
         {
           text:
-            "Точно помню – все получили поздравления с прошедшими праздниками, а заодно напоминание о текущих задачах и ближайшей встрече со своим руководителем. Наметился новый проект, пора бы начать готовиться к нему.",
+            "Точно помню – все получили поздравления с прошедшими праздниками, а заодно напоминание о текущих задачах и ближайшей встрече со своим руководителем. Работа продолжается!",
           value: ["inventor", "researcher"]
         },
         {
           text:
-            "Пока все собирались, у меня было время погрузиться в прогнозы аналитиков и футурологов, набросать пару-тройку сценариев на ближайшие лет пять и заглянуть за точку сингулярности, чтобы узнать, как будет там.",
+            "Пока все собирались, у меня было время погрузиться в прогнозы аналитиков и футурологов, набросать пару-тройку сценариев на ближайшие лет пять и заглянуть за точку сингулярности.",
           value: ["wizard", "dreamer"]
         },
         {
           text:
-            "Лучшее начало рабочего года — устроить с коллегами чаепитие с гостинцами из дальних и ближних путешествий, обменяться впечатлениями о прошедших праздниках. А к работе все вернутся и без напоминаний!",
+            "Лучшее начало года – чаепитие с коллегами: обменяться впечатлениями о прошедших праздниках. А к работе все вернутся и без напоминаний!»",
           value: ["traveler", "mastermind"]
         }
       ],
@@ -320,12 +358,12 @@ export default {
         },
         {
           text:
-            "Ох, непростое время. Каждый год приходится задавать множество вопросов и перерывать весь интернет, чтобы узнать, чем же новым можно порадовать коллег в эти праздники. Считаю, что лучший подарок можно сделать только своими руками.",
+            "Ох, непростое время!  Каждый год приходится перерыть весь интернет, чтобы придумать, чем новым можно порадовать коллег в эти праздники!  Считаю, что лучший подарок можно сделать только своими руками.",
           value: ["inventor", "researcher"]
         },
         {
           text:
-            "Лучший подарок — ощущение счастья! В таких случаях всегда готовлю вдохновляющую речь.Так приятно видеть, как глаза коллег зажигаются радостью, а на лицах появляются улыбки!",
+            "Лучший подарок — ощущение счастья! В таких случаях всегда готовлю яркую речь.Так приятно видеть, как глаза коллег зажигаются радостью, а на лицах появляются улыбки!",
           value: ["traveler", "mastermind"]
         }
       ],
@@ -410,7 +448,7 @@ export default {
         },
         {
           text:
-            "Никогда раньше не приходилось учиться с такой скоростью! Мне кажется, я уже умею все: кодировать, управлять тысячами людей на расстоянии, делать ремонт, выращивать всевозможные фрукты и овощи, ездить на любом транспорте — от лошади до яхты, играть на фортепиано, гитаре и трубе!",
+            "Никогда раньше не приходилось учиться с такой скоростью! Мне кажется, я уже умею все: кодировать, руководить на расстоянии, делать ремонт, говорить на всех языках, играть на фортепьяно и трубе, управлять любым транспортом – от лошади до яхты!",
           value: ["researcher"]
         },
         {
@@ -475,12 +513,12 @@ export default {
     ...mapActions(["CHANGE_STATE", "CHANGE_ANSWERS"]),
 
     nextStep() {
-      if (this.currentAnswer !== "" && this.STEP_STATE >= 2) {
+      if (this.currentAnswer !== "" && this.STEP_STATE >= 4) {
         this.CHANGE_ANSWERS(this.currentAnswer);
-        this.CHANGE_STATE();
+        this.CHANGE_STATE("+");
         this.currentAnswer = "";
-      } else if (this.STEP_STATE < 2) {
-        this.CHANGE_STATE();
+      } else if (this.STEP_STATE < 4) {
+        this.CHANGE_STATE("+");
       }
 
       document.querySelector("#app").scrollTo({
@@ -489,13 +527,17 @@ export default {
       });
     },
 
+    prevStep() {
+      this.CHANGE_STATE("-");
+    },
+
     nextStepDouble() {
       if (this.currentAnswer) {
         this.CHANGE_ANSWERS(this.currentAnswer);
         this.CHANGE_ANSWERS(this.currentAnswer);
-        this.CHANGE_STATE();
+        this.CHANGE_STATE("+");
         this.currentAnswer = "";
-        this.choiceBranch();
+        this.choiceBranch("+");
       }
     },
 
@@ -504,7 +546,7 @@ export default {
     },
 
     viewResult() {
-      this.CHANGE_STATE();
+      this.CHANGE_STATE("+");
     },
 
     choiceBranch() {
@@ -542,7 +584,7 @@ export default {
 
       this.winner = result[0];
 
-      this.CHANGE_STATE();
+      this.CHANGE_STATE("+");
     }
   }
 };
@@ -552,6 +594,7 @@ export default {
 .title {
   margin-bottom: 30px;
   display: block;
+  color: #009cbd;
 }
 
 .test {
@@ -573,25 +616,46 @@ export default {
       margin: 0;
     }
   }
+  &__footer {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__btn {
+    padding: 0;
     margin-left: auto;
     transition: 0.3s;
     opacity: 1;
     user-select: none;
+    font-weight: 300;
     &.disabled {
       pointer-events: none;
       opacity: 0.5;
+    }
+    &_back {
+      margin-left: 0;
+      width: 35px;
+      height: 35px;
+      transform: rotate(180deg);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   &__start {
     margin-top: auto;
     position: absolute;
     bottom: 5vh;
+    font-weight: 300;
+    text-transform: uppercase;
     @media screen and (max-width: 992px) {
       margin-bottom: 0;
       font-size: 21px;
       line-height: 25px;
-      font-weight: 300;
       position: absolute;
       bottom: 5vh;
       padding: 0 20px;

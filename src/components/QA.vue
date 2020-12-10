@@ -94,9 +94,14 @@ export default {
     top: 50%;
     left: 0;
     transform: translateY(-50%) rotate(-90deg);
-    width: 12px;
-    height: 23px;
+    width: 15px;
+    height: 34px;
     z-index: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
 
     .bulb {
       transition: 0.5s;
