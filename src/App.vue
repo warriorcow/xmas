@@ -26,7 +26,7 @@ export default {
     Logo,
     Test,
     Background,
-    Tree,
+    Tree
     // Sound,
   },
 
@@ -37,7 +37,7 @@ export default {
       let obj = {};
       obj["tree_" + this.STEP_STATE] = this.STEP_STATE;
       return obj;
-    },
+    }
   },
 
   methods: {
@@ -45,8 +45,8 @@ export default {
 
     nextStep() {
       this.CHANGE_STATE("+");
-    },
-  },
+    }
+  }
 };
 </script>
 

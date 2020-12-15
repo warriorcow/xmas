@@ -11,9 +11,9 @@
 import Sound from "./Sound";
 export default {
   components: {
-    Sound,
+    Sound
   },
-  props: ["src"],
+  props: ["src"]
 };
 </script>
 

@@ -59,6 +59,7 @@ export default {
   watch: {
     volume() {
       let audio = document.getElementById("audio");
+      audio.volume = 0;
       audio.volume = this.setVolume;
     },
   },
@@ -68,11 +69,6 @@ export default {
       this.mute = !this.mute;
       document.getElementById("audio").muted = this.mute;
     },
-  },
-
-  mounted() {
-    var audio = document.getElementById("audio");
-    audio.volume = this.setVolume;
   },
 };
 </script>
