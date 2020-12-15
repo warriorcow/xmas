@@ -11,9 +11,7 @@
         :data-value="item.value"
         v-model="picked"
       />
-      <label :for="`answer${index}`" class="qa__text">
-        {{ item.text }}
-      </label>
+      <label :for="`answer${index}`" class="qa__text" v-html="item.text" />
       <div class="qa__radio">
         <svg
           width="13"

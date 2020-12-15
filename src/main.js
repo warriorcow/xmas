@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
-import VueImg from 'v-img';
+import VueImg from "v-img";
 
 Vue.use(VueImg);
 

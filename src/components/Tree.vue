@@ -1234,7 +1234,9 @@ export default {};
     flex: 1;
   }
 
-  &#{$self}_1, &#{$self}_2, &#{$self}_3 {
+  &#{$self}_1,
+  &#{$self}_2,
+  &#{$self}_3 {
     transition: 2s;
     height: 100%;
     pointer-events: none;
@@ -1298,7 +1300,7 @@ export default {};
       height: auto;
       width: 200%;
       height: 200%;
-      transform: translate(-29%, -23%) scale(1);
+      transform: translate(-89%, -30%) scale(1);
     }
   }
   &#{$self}_9 {
@@ -1342,7 +1344,7 @@ export default {};
       height: auto;
       width: 200%;
       height: 200%;
-      transform: translate(-31%, -50%) scale(1);
+      transform: translate(-101%, -54%) scale(1);
     }
   }
   &#{$self}_13 {

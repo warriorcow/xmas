@@ -14,6 +14,7 @@
 <script>
 import Logo from "./components/Logo";
 import Test from "./components/Test";
+// import Sound from "./components/Sound";
 import Background from "./components/Background";
 import Tree from "./components/Tree";
 import { mapGetters, mapActions } from "vuex";
@@ -25,7 +26,8 @@ export default {
     Logo,
     Test,
     Background,
-    Tree
+    Tree,
+    // Sound,
   },
 
   computed: {
@@ -35,7 +37,7 @@ export default {
       let obj = {};
       obj["tree_" + this.STEP_STATE] = this.STEP_STATE;
       return obj;
-    }
+    },
   },
 
   methods: {
@@ -43,8 +45,8 @@ export default {
 
     nextStep() {
       this.CHANGE_STATE("+");
-    }
-  }
+    },
+  },
 };
 </script>
 

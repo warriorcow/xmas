@@ -5,7 +5,7 @@
     </div>
     <div class="result__inner">
       <div class="result__title">{{ title }}</div>
-      <div class="result__desc">{{ desc }}</div>
+      <div class="result__desc" v-html="desc" />
     </div>
     <div class="result__footer">
       <button @click="REPASS_TEST" class="result__refresh">
@@ -105,10 +105,10 @@ export default {
       min-height: auto;
     }
     &::before {
-      content: '';
+      content: "";
       width: 30px;
       height: 30px;
-      background: url('../../public/image/magnifier.svg');
+      background: url("../../public/image/magnifier.svg");
       bottom: 20px;
       right: 20px;
       position: absolute;
@@ -136,13 +136,11 @@ export default {
     justify-content: space-between;
     font-size: 16px;
     line-height: 19px;
-    padding-top: 15px;
+    padding-top: 25px;
     margin-top: 25px;
     border-top: 1px solid #e2e2e2;
     a {
-      border-radius: 10px;
       display: inline-flex;
-      overflow: hidden;
       &:not(:last-of-type) {
         margin-right: 20px;
       }
@@ -150,28 +148,28 @@ export default {
   }
 
   &__refresh {
-    font-size: 17px;
-    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
     text-align: left;
     padding: 0;
+    color: #adbdcd;
+    @media screen and (max-width: 992px) {
+      margin-right: 20px;
+    }
   }
 
   &__social {
     display: flex;
 
     a {
-      width: 37px;
-      height: 37px;
       cursor: pointer;
-      @media screen and (max-width: 992px) {
-        width: 30px;
-        height: 30px;
-      }
       &.vk {
-        width: 48px;
-        @media screen and (max-width: 992px) {
-          width: 38px;
-        }
+        width: 37px;
+        height: 22px;
+      }
+      &.fb {
+        width: 12px;
+        height: 22px;
       }
       img {
         width: 100%;
