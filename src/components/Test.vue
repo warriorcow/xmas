@@ -326,6 +326,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
+      audio: "",
       winner: "",
       winnerBranch: null,
       currentAnswer: "",
